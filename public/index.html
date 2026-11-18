@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071c18"><link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/style.css"><title>eFootballhelp</title>
+</head>
+<body>
+<header class="top"><div class="brand"><span class="ball">⚽</span><div><b>eFootballhelp</b><small>Player data & mechanics companion</small></div></div><span class="version">APP V1.2</span></header>
+<div class="shell">
+<nav class="nav">
+<button class="navbtn active" data-page="home">Overview</button>
+<button class="navbtn" data-page="players">Player database</button>
+<button class="navbtn" data-page="mechanics">Mechanics lab</button>
+<button class="navbtn" data-page="planner">Progression planner</button>
+<button class="navbtn" data-page="compare">Compare players</button>
+</nav>
+<main>
+<section id="home" class="page active">
+<div class="hero"><p class="eyebrow">YOUR eFOOTBALL COMPANION</p><h1>Understand the game.<br><span>Build smarter players.</span></h1><p>Explore player data, learn game mechanics and plan your squad.</p><button class="primary" data-go="players">Open player database</button></div>
+<div class="tiles"><article><b>Player data</b><p>Connect a permitted data provider or import a JSON player file.</p></article><article><b>Mechanics lab</b><p>Learn how attributes can affect performance in different situations.</p></article><article><b>Build planner</b><p>Experiment with progression points in a sandbox.</p></article></div>
+<div class="notice"><b>Data transparency</b><p>There is no public official KONAMI API configured in this starter app. Live data appears only after you connect a legitimate provider. Imported and sample data are labelled separately.</p></div>
+</section>
+<section id="players" class="page">
+<div class="sectionhead"><div><p class="eyebrow">DATABASE</p><h2>Player cards</h2><p class="muted">Search, filter and inspect available player records.</p></div><button id="refresh" class="secondary">↻ Refresh source</button></div>
+<div class="status" id="status">Checking data source…</div>
+<div class="toolbar"><input id="search" placeholder="Search player name, team or position"><select id="position"><option value="">All positions</option><option>CF</option><option>SS</option><option>LWF</option><option>RWF</option><option>AMF</option><option>CMF</option><option>DMF</option><option>LMF</option><option>RMF</option><option>LB</option><option>CB</option><option>RB</option><option>GK</option></select><label class="filebtn">Import JSON<input type="file" id="importFile" accept=".json,application/json"></label></div>
+<div id="playerGrid" class="playergrid"><div class="empty">Loading records…</div></div>
+<p class="small muted">Imported data stays in this browser on this device. For shared live updates, configure the server-side provider in the README.</p>
+</section>
+<section id="mechanics" class="page"><p class="eyebrow">LEARNING CENTRE</p><h2>Mechanics lab</h2><div class="tiles">
+<article><h3>Speed & acceleration</h3><p>Speed relates to top running pace. Acceleration relates to how quickly a player reaches that pace. Space, stamina and player movement also matter.</p></article>
+<article><h3>Balance & physical contact</h3><p>Balance can influence how well a player stays composed while moving or being challenged. Physical contact is one part of shoulder-to-shoulder contests.</p></article>
+<article><h3>Dribbling & tight possession</h3><p>Dribbling is useful for carrying the ball. Tight possession is especially relevant to close control and small movements.</p></article>
+<article><h3>Passing & through balls</h3><p>Passing attributes contribute to pass quality. The passing lane, player orientation, pressure and pass command also matter.</p></article>
+<article><h3>Shooting & finishing</h3><p>Finishing contributes to shot accuracy in scoring situations. Shot type, body position, pressure and distance can change the outcome.</p></article>
+<article><h3>Defending & awareness</h3><p>Defensive awareness helps positioning. Match-up timing, player switching and team shape remain important.</p></article>
+</div></section>
+<section id="planner" class="page"><p class="eyebrow">SANDBOX TOOL</p><h2>Progression planner</h2><p class="muted">A simple planning sandbox, not an official Konami calculator.</p><div class="planner">
+<label>Available points <input id="budget" type="number" min="0" max="100" value="60"></label>
+<div id="allocations"></div><p><b>Points allocated: <span id="spent">0</span> / <span id="total">60</span></b></p><button id="reset" class="secondary">Reset allocations</button>
+</div></section>
+<section id="compare" class="page"><p class="eyebrow">PLAYER ANALYSIS</p><h2>Compare players</h2><p class="muted">Choose two records from the connected or imported database.</p><div class="compareform"><select id="leftPlayer"></select><select id="rightPlayer"></select><button id="compareBtn" class="primary">Compare</button></div><div id="comparison"></div></section>
+</main></div>
+<div id="modal" class="modal hidden"><div class="modalbox"><button id="closeModal" class="close">✕</button><div id="modalContent"></div></div></div>
+<footer>Independent fan-made companion · Not affiliated with or endorsed by KONAMI.</footer>
+<script src="/app.js"></script>
+</body></html>

@@ -1,0 +1,9 @@
+{
+  "name": "eFootballhelp",
+  "short_name": "eFootballhelp",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#061713",
+  "theme_color": "#071c18",
+  "icons": []
+}
