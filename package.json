@@ -1,0 +1,13 @@
+{
+  "name": "efootballhelp",
+  "version": "1.2.0",
+  "private": true,
+  "description": "eFootball companion PWA with configurable player-data integration",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
